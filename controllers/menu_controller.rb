@@ -19,7 +19,8 @@
       puts "2 - Create an entry"
       puts "3 - Search for an entry"
       puts "4 - Import entries from a CSV"
-      puts "5 - Exit"
+      puts "5 - View Entry Number n"
+      puts "6 - Exit"
       print "Enter your selection: "
       
       # #3
@@ -44,6 +45,10 @@
         read_csv
         main_menu
       when 5
+        system "clear"
+        view_entry_n
+        main_menu
+      when 6
         puts "Good-Bye!"
         # #8
         exit(0)
@@ -76,7 +81,7 @@
       print "Name: "
       name = gets.chomp
       print "Phone Number: "
-      phone= gets.chomp
+      phone = gets.chomp
       print "Email: "
       email = gets.chomp
       
@@ -121,4 +126,19 @@
     end
   end
   
-  
+    def view_entry_n
+      system "clear"
+      puts "Input Entry Number"
+      selection = gets.chomp.to_i
+      
+      if selection < @address_book.entries.count
+        puts @address_book.entries[selection]
+        puts "press enter to return to menu"
+        gets.chomp
+        system "clear"
+      else
+        system "clear"
+        puts "#{selection} is not a valid input"
+        view_entry_n
+      end
+    end

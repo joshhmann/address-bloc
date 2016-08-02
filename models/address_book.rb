@@ -28,7 +28,7 @@ class AddressBook
             if name < entry.name
                 break
             end 
-            indedx += 1
+            index += 1
         end 
         
         entries.insert(index, Entry.new(name, phone_number, email))
