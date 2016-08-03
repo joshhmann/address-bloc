@@ -7,9 +7,9 @@ RSpec.describe AddressBook do
     # #6
     def check_entry(entry, expected_name, expected_number, expected_email)
       
-          expect(entry.name).to eq expected_name
-          expect(entry.phone_number).to eq expected_number
-          expect(entry.email).to eq expected_email
+        expect(entry.name).to eq expected_name
+        expect(entry.phone_number).to eq expected_number
+        expect(entry.email).to eq expected_email
     end
     
     describe "attributes" do
