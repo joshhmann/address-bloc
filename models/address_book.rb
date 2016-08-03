@@ -45,7 +45,10 @@ class AddressBook
     end
   end
           
-  
+    def nuke
+      @entries = []
+      
+    end
     
     def remove_entry(name, phone, email)
         delete_entry = nil

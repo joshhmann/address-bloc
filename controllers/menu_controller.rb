@@ -20,7 +20,8 @@
       puts "3 - Search for an entry"
       puts "4 - Import entries from a CSV"
       puts "5 - View Entry Number n"
-      puts "6 - Exit"
+      puts "6 - NUKE ENTRIES"
+      puts "7 - Exit"
       print "Enter your selection: "
       
       # #3
@@ -49,6 +50,11 @@
         view_entry_n
         main_menu
       when 6
+        system "clear"
+        @address_book.nuke
+        puts "All entries deleted!"
+        main_menu
+      when 7
         puts "Good-Bye!"
         # #8
         exit(0)
@@ -159,7 +165,7 @@
       else
         system "clear"
         puts "#{selection} is not a valid input"
-        entry _submenu(entry)
+        entry_submenu(entry)
     end
   end
   
@@ -167,6 +173,8 @@
     address_book.entries.delete(entry)
     puts "#{entry.name} has been deleted"
   end
+  
+    
   
   def edit_entry
     
