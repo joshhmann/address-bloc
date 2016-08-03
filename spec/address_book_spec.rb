@@ -6,10 +6,9 @@ RSpec.describe AddressBook do
     
     # #6
     def check_entry(entry, expected_name, expected_number, expected_email)
-      
-          expect(entry.name).to eq expected_name
-          expect(entry.phone_number).to eq expected_number
-          expect(entry.email).to eq expected_email
+      expect(entry.name).to eq expected_name
+      expect(entry.phone_number).to eq expected_number
+      expect(entry.email).to eq expected_email
     end
     
     describe "attributes" do
@@ -106,39 +105,5 @@ RSpec.describe AddressBook do
        check_entry(entry_five, "Sussie", "555-555-2036", "sussie@blocmail.com")
      end
    end
-     # Test that aDdressBook's .import_from_csv() method is working as expected
-   describe "#import_from_csv" do
-     it "imports the correct numbere of entries" do
-    
-       book.import_from_csv("entries_2.csv")
-       book_size = book.entries.size
-       
-       # checking the size of the entries in the AddressBook
-       expect(book_size).to eq 3
-     end
-    
-    
-    it "imports the 1st entry" do
-      book.import_from_csv("entries_2.csv")
-      # check the first entry
-      entry_one = book.entries[0]
-      check_entry(entry_one, "Jamie", "555-555-9545", "Jamie@blocmail.com")
-
-    end
-        it "imports the 2nd entry" do
-       book.import_from_csv("entries_2.csv")
-       # Check the second entry
-       entry_two = book.entries[1]
-       check_entry(entry_two, "Raynor", "555-555-8445", "Raynor@blocmail.com")
-     end
-  
-     it "imports the 3rd entry" do
-       book.import_from_csv("entries_2.csv")
-       # Check the third entry
-       entry_three = book.entries[2]
-       check_entry(entry_three, "Harold", "555-555-7845", "Harold@blocmail.com")
-     end
-   end 
-   
    
  end
