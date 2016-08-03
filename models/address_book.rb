@@ -48,13 +48,12 @@ class AddressBook
       
       entries.each do |expected_name|
         if name == expected_name.name
-          return name
-        else
-          return nil
+          return expected_name
         end
-      end
+      end 
       
       return nil
+      
     end
   end
           
